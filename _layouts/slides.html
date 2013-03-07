@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/slides.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="slides">
+      {{ content }}
+    </div>
+    <script src="js/lib/md-plus-web.js"></script>
+    <script src="js/lib/requestAnimationFrame.js"></script>
+    <script src="js/slides.js"></script>
+    <script>
+      var isNetworked = false;
+      var fayeURL = 'http://' + document.location.hostname + ":3333/faye"
+
+      function mainSlideshow () {
+          var builder = new Slides.Builder();
+          var slides = document.getElementsByClassName('slides')[0];
+          var show = builder.consume(slides);
+          var keyboardPresenter = new Slides.KeyboardPresenter(show);
+          var urlPresenter = new Slides.URLPresenter(show);
+          var thumbnailPresenter = new Slides.ThumbnailPresenter(show, .5, "em");
+          if (Slides.hasTouch()) {
+            var draggingPresenter = new Slides.DraggingPresenter(show);
+          } else {
+            var draggingPresenter = new Slides.InstantPresenter(show);
+          }
+
+          if (isNetworked) {
+            var fayeClient = new Faye.Client(fayeURL);
+            var fayeViewerPresenter = new Slides.FayeViewerPresenter(show, fayeClient);
+          }
+
+          // Reveal the slideshow.
+          document.getElementsByClassName('slides')[0].setAttribute('style', 'display: block;');
+      };
+
+      function outline () {
+          var builder = new Slides.Builder();
+          var show = builder.consume(document.getElementsByClassName('slides')[0]);
+          var outlinePresenter = new Slides.OutlinePresenter(show);
+          var urlPresenter = new Slides.URLPresenter(show);
+          var keyboardPresenter = new Slides.KeyboardPresenter(show);
+
+          if (Slides.hasTouch()) {
+            var draggingPresenter = new Slides.DraggingPresenter(show);
+          }
+
+          if (isNetworked) {
+            var fayeClient = new Faye.Client(fayeURL);
+            var fayeSpeakerPresenter = new Slides.FayeSpeakerPresenter(show, fayeClient);
+          }
+
+          outlinePresenter.reveal();
+      };
+
+      if (/outline/.test(window.location.search)) {
+          outline();
+      } else {
+          mainSlideshow();
+      }
+    </script>
+  </body>
+</html>

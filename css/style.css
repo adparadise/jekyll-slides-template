@@ -1,0 +1,20 @@
+
+@font-face {
+    font-family: 'DroidSansBold';
+    src: url('DroidSans-Bold-webfont.eot');
+    src: url('DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DroidSans-Bold-webfont.woff') format('woff'),
+         url('DroidSans-Bold-webfont.ttf') format('truetype'),
+         url('DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body { font-size: 12px; font-family: helvetica, arial, sans-serif; }
+body > div { width: 90%; margin: 0em auto; }
+h1, h2, h3, h4, h5 { font-family: 'DroidSansBold', helvetica, arial, sans-serif; letter-spacing: -0.05em;}
+h1 { margin: 1em 0em .25em 0em; }
+h2 { margin: 1em 0em .5em 0em; }
+h3, h4 { margin: 0em; }
+h2 { color: #347; }
+p { margin-top: .25em; }

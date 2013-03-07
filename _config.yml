@@ -1,0 +1,6 @@
+markdown: rdiscount
+pygments: true
+include: ['images', 'css']
+exclude: ['node_modules', 'package.json']
+server: true
+auto: true
