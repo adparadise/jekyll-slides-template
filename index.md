@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: Example slideshow
+title: Jekyll Slides Template
 ---
 <!-- This space is intentionally left blank -->
 ---

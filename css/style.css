@@ -1,20 +1,58 @@
 
+
 @font-face {
-    font-family: 'DroidSansBold';
-    src: url('DroidSans-Bold-webfont.eot');
-    src: url('DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('DroidSans-Bold-webfont.woff') format('woff'),
-         url('DroidSans-Bold-webfont.ttf') format('truetype'),
-         url('DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-family: 'LatoHairline';
+    src: url('fonts/Lato-Hairline.ttf') format(truetype);
     font-weight: normal;
     font-style: normal;
 }
 
-body { font-size: 12px; font-family: helvetica, arial, sans-serif; }
+@font-face {
+    font-family: 'LatoLight';
+    src: url('fonts/Lato-Light.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('fonts/Lato-Regular.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('fonts/Lato-Bold.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoBlack';
+    src: url('fonts/Lato-Black.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* Colors */
+body { background: #333340; }
+h1 { color: #eff; }
+h2 { color: #cff; }
+h3 { color: #9ee; }
+p, li { color: #fff; }
+
+/* Typography */
+h1 { font-family: 'LatoHairline', helvetica, arial, sans-serif; font-weight: normal; font-size: 3em;}
+h2 { font-family: 'LatoRegular', helvetica, arial, sans-serif; font-weight: normal; }
+h3, h4, h5 { font-family: 'LatoLight', helvetica, arial, sans-serif; font-weight: normal; }
+p, li { font-family: 'LatoLight', helvetica, arial, sans-serif; font-weight: normal; }
+
+/* Spacing */
 body > div { width: 90%; margin: 0em auto; }
-h1, h2, h3, h4, h5 { font-family: 'DroidSansBold', helvetica, arial, sans-serif; letter-spacing: -0.05em;}
-h1 { margin: 1em 0em .25em 0em; }
+h1 { margin: 0.25em 0em; }
 h2 { margin: 1em 0em .5em 0em; }
 h3, h4 { margin: 0em; }
-h2 { color: #347; }
 p { margin-top: .25em; }

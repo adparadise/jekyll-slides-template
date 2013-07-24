@@ -23,11 +23,7 @@ body {
     margin: auto;
 }
 
-h1, h2, h3, h4 {
-    font-family: arial, sans;
-}
-h1 { text-align: center; color: #2851a2; }
-h2 { font-weight: normal; color: #444; }
+h1 { text-align: center; }
 p { margin: .5em 0em; }
 ul { padding: 0em 1em; margin: .5em 0em; }
 li { list-style-type: none; padding: .1em 0em; }
