@@ -18,7 +18,7 @@ Install Jekyll on your computer. For instructions, look to
 [http://jekyllrb.com](http://jekyllrb.com) for the most up-to-date
 info.
 
-Start the local server/HTML builder by executing `jekyll` on the
+Start the local server/HTML builder by executing `jekyll serve --watch` on the
 command line. This will rebuild the HTML and start a server listening
 on port 4000. It will watch for changes to your slides source document
 and rebuild them.
