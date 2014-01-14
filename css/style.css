@@ -56,3 +56,14 @@ h1 { margin: 0.25em 0em; }
 h2 { margin: 1em 0em .5em 0em; }
 h3, h4 { margin: 0em; }
 p { margin-top: .25em; }
+
+.bgvideo-positioning {
+    position: relative;
+}
+.bgvideo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -100;
+}

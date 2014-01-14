@@ -881,6 +881,38 @@ Slides.OutlinePresenter = function (show) {
     show.on('slideIndex', this.setCurrentSlideIndex, this);
 };
 
+/* Autoplay all videos on a slide when it appears */
+Slides.VideoPresenter = function (show) {
+    var self = this;
+
+    this.setCurrentSlideIndex = function (slideIndex) {
+        var slide;
+
+        this.eachVideo(function (video) {
+            video.currentTime = 0;
+            video.pause && video.pause();
+        });
+        slide = show.getSlide(slideIndex);
+        this._currentVideos = slide.div.getElementsByTagName('video');
+
+        this.eachVideo(function (video) {
+            video.currentTime = 0;
+            video.play && video.play();
+        });
+    };
+
+    this.eachVideo = function (callback) {
+        var index;
+        if (!this._currentVideos) {
+            return;
+        }
+        for (index = 0; index < this._currentVideos.length; index++) {
+            callback(this._currentVideos[index]);
+        }
+    };
+
+    show.on('slideIndex', this.setCurrentSlideIndex, this);
+};
 
 (function( win ){
     var doc = win.document;
